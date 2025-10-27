@@ -46,21 +46,19 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative px-4 md:px-8 lg:px-16">
-      {/* Background Gradient */}
-      {/* Background dengan Custom CSS */}
-        <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute inset-0">
-                <Image
-                src="/images/abstract-waves.png"
-                alt="Abstract Waves Background"
-                fill
-                className="object-cover bg-waves-subtle opacity-50"
-                priority
-                />
-            </div>
+      {/* Background */}
+      <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0">
+              <Image
+              src="/images/abstract-waves.png"
+              alt="Abstract Waves Background"
+              fill
+              className="object-cover bg-waves-subtle opacity-50"
+              priority
+              />
+          </div>
   
-  {/* Glass overlay */}
-  <div className="absolute inset-0 bg-waves-blur bg-gradient-to-b from-transparent to-background/70" /></div>
+      <div className="absolute inset-0 bg-waves-blur bg-gradient-to-b from-transparent to-background/70" /></div>
 
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
