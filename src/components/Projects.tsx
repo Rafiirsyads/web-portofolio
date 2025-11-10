@@ -1,8 +1,16 @@
 "use client";
 import { useState } from "react";
 import PDFViewer from "./PDFViewer";
+import { image } from "framer-motion/client";
 
 const projects = [
+  {
+    title: "Portofolio",
+    description: "A collection of my academic and personal projects",
+    image: "project-portofolio.png",
+    role: "Featured Works",
+    githubLink: "https://github.com/Rafiirsyads/web-portofolio"
+  },
   {
     title: "KoolStock",
     description: "Stock Management System for PT. Koolzone Indonesia",

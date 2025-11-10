@@ -61,7 +61,7 @@ export default function Navbar() {
               className="text-xl font-bold text-white cursor-pointer"
               onClick={() => scrollToSection("home")}
             >
-              Rafi<span className="text-vibrant-pink">.</span>
+              Rafi Irsyad<span className="text-vibrant-pink">.</span>
             </motion.div>
 
             {/* Desktop Menu */}
