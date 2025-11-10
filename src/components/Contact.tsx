@@ -1,14 +1,96 @@
+"use client";
+import Image from "next/image";
+
 export default function Contact() {
   return (
-    <section className="py-24 px-4 text-center">
-      <h2 className="text-3xl font-semibold mb-6">Get in Touch</h2>
-      <p className="text-gray-400 mb-4">Feel free to reach out via email:</p>
-      <a
-        href="mailto:rafi.irsyad@example.com"
-        className="inline-block px-6 py-3 bg-vibrant.cyan text-black font-semibold rounded-md hover:bg-vibrant.pink transition"
-      >
-        rafi.irsyad@example.com
-      </a>
+    <section className="min-h-screen flex items-center justify-center relative px-4 md:px-8 lg:px-16">
+      {/* Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/contacts-bg.png"
+            alt="Contact Background"
+            fill
+            className="object-cover bg-waves-subtle opacity-50"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/70" />
+      </div>
+
+      <div className="max-w-4xl mx-auto w-full z-10 relative">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold mb-6">Get in Touch</h2>
+          <p className="text-gray-400 mb-8">Feel free to reach out through any of these platforms:</p>
+          
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Email */}
+            <a
+              href="mailto:rafiirsyad2004@gmail.com"
+              className="group p-6 bg-primary/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-red-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <div className="flex flex-col items-center gap-4">
+                <div className="p-3 bg-red-500/10 rounded-full group-hover:bg-red-500/20 transition-colors">
+                  <svg className="w-8 h-8 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
+                  <p className="text-gray-400 text-sm break-all">rafiirsyad2004@gmail.com</p>
+                </div>
+              </div>
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/rafisaharso"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 bg-primary/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-blue-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <div className="flex flex-col items-center gap-4">
+                <div className="p-3 bg-blue-500/10 rounded-full group-hover:bg-blue-500/20 transition-colors">
+                  <svg className="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">LinkedIn</h3>
+                  <p className="text-gray-400 text-sm">Professional Profile</p>
+                </div>
+              </div>
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/rafiirsyaads/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 bg-primary/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-pink-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <div className="flex flex-col items-center gap-4">
+                <div className="p-3 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full group-hover:from-purple-500/20 group-hover:to-pink-500/20 transition-colors">
+                  <svg className="w-8 h-8 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">Instagram</h3>
+                  <p className="text-gray-400 text-sm">@rafiirsyaads</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          {/* Additional message */}
+          <div className="mt-12 p-6 bg-gradient-to-r from-vibrant-cyan/10 to-vibrant-lime/10 backdrop-blur-sm rounded-xl border border-vibrant-cyan/20">
+            <p className="text-gray-300 text-lg">
+              Looking forward to connecting with you! 🚀
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

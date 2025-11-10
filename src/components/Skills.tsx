@@ -53,7 +53,7 @@ export default function Skills() {
             src="/images/line.png"
             alt="Technology Background"
             fill
-            className="object-cover opacity-20 blur-sm"
+            className="object-cover opacity-50"
             priority={false}
             quality={75}
           />

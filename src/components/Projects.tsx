@@ -26,12 +26,6 @@ const projects = [
     image: "UCS Cover.png",
     prdDocument: "/document/Kasbobby - UCS.pdf"
   },
-  {
-    title: "Project Management System",
-    description: "Internal tool to centralize WSM process and approvals.",
-    role: "-",
-    link: "#"
-  }
 ];
 
 export default function Projects() {
