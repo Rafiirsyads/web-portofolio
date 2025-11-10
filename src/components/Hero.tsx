@@ -171,7 +171,7 @@ export default function Hero() {
       <PDFViewer
         isOpen={showPDF}
         onClose={() => setShowPDF(false)}
-        pdfUrl="/CV - Rafi Irsyad Saharso.pdf"
+        pdfUrl="/document/CV - Rafi Irsyad Saharso.pdf"
       />
     </section>
   );

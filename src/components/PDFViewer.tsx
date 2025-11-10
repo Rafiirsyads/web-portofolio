@@ -5,9 +5,47 @@ interface PDFViewerProps {
   isOpen: boolean;
   onClose: () => void;
   pdfUrl: string;
+  title?: string;
+  downloadFileName?: string;
+  type?: 'resume' | 'document' | 'prd';
 }
 
-export default function PDFViewer({ isOpen, onClose, pdfUrl }: PDFViewerProps) {
+export default function PDFViewer({ 
+  isOpen, 
+  onClose, 
+  pdfUrl, 
+  title,
+  downloadFileName,
+  type = 'document'
+}: PDFViewerProps) {
+  // Dynamic title based on type or custom title
+  const getTitle = () => {
+    if (title) return title;
+    
+    switch (type) {
+      case 'resume':
+        return 'Resume - Rafi Irsyad Saharso';
+      case 'prd':
+        return 'Product Requirements Document';
+      default:
+        return 'Document Viewer';
+    }
+  };
+
+  // Dynamic download filename
+  const getDownloadFileName = () => {
+    if (downloadFileName) return downloadFileName;
+    
+    switch (type) {
+      case 'resume':
+        return 'CV - Rafi Irsyad Saharso.pdf';
+      case 'prd':
+        return 'PRD_Document.pdf';
+      default:
+        return 'document.pdf';
+    }
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -27,13 +65,13 @@ export default function PDFViewer({ isOpen, onClose, pdfUrl }: PDFViewerProps) {
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50">
-              <h3 className="text-xl font-bold text-gray-900">Resume - Rafi Irsyad Saharso</h3>
+              <h3 className="text-xl font-bold text-gray-900">{getTitle()}</h3>
               
               <div className="flex items-center gap-4">
                 {/* Download Button */}
                 <a
                   href={pdfUrl}
-                  download="CV - Rafi Irsyad Saharso.pdf"
+                  download={getDownloadFileName()}
                   className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +110,7 @@ export default function PDFViewer({ isOpen, onClose, pdfUrl }: PDFViewerProps) {
               <iframe
                 src={`${pdfUrl}#toolbar=1&navpanes=1&scrollbar=1&page=1&view=FitH`}
                 className="w-full h-full border-0"
-                title="Resume PDF"
+                title={getTitle()}
                 loading="lazy"
               />
             </div>
