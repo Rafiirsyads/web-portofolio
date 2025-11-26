@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
 import PDFViewer from "./PDFViewer";
-import { image } from "framer-motion/client";
+import Image from "next/image";
+import SpotlightCard from '@/components/SpotlightCard';
 
 const projects = [
   {
     title: "Portofolio",
     description: "A collection of my academic and personal projects",
-    image: "project-portofolio.png",
+    image: "Portofolio.png",
     role: "Featured Works",
     githubLink: "https://github.com/Rafiirsyads/web-portofolio"
   },
@@ -34,6 +35,28 @@ const projects = [
     image: "UCS Cover.png",
     prdDocument: "/document/Kasbobby - UCS.pdf"
   },
+  {
+    title: "APAP Medika",
+    description: "APAP Medika is a scalable hospital platform built with Spring Boot microservices and Vue.js, featuring secure authentication, automated CI/CD delivery, and containerized deployment using Docker.",
+    role: ["University Project", "Full Stack Developer"],
+    image: "No Cover.png",
+  },
+  {
+    title: "Smart Waste",
+    description: "SmartWaste is a design-driven MVP that visualizes a recycling incentive ecosystem through intuitive mobile and web UX, transforming early business ideation into engaging, accessible product experience.",
+    role: ["University Project", "UI/UX Engineer", "Business Ideation"],
+    image: "SmartWaste.jpg",
+    link:"https://www.figma.com/design/Qh1gy3aAQ2xFksDsWv9617/SisterBros-TK4?node-id=9-130&t=bHsTWfeVq4qLTbqW-1",
+    prdDocument: "/document/OAP Kelompok 6 SmartWaste.pdf"
+  },
+  {
+    title: "Emission Zero",
+    description: "Designed the Emission Zero MVP UI/UX for personal carbon emission tracking, reduction insights, and community engagement using a user-centered, research-driven approach.",
+    role: ["University Project", "UI/UX Engineer", "Business Ideation"],
+    image: "EmissionZero.jpg",
+    link:"https://www.figma.com/design/gwjRSzdNrw9L5fVTJVDbtf/Smart-Waste?node-id=81-1488&t=857RTVs6EeWBDGcp-1",
+    prdDocument: "/document/Emission Zero - Presentation.pdf"
+  },
 ];
 
 export default function Projects() {
@@ -51,16 +74,25 @@ export default function Projects() {
 
   return (
     <section className="py-24 px-4 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-semibold text-center mb-8">Projects</h2>
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+        Projects
+      </h2>
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((project) => (
-          <div key={project.title} className="bg-primary p-6 rounded-xl border border-gray-800">
+          <SpotlightCard 
+            key={project.title}
+            className="bg-primary p-6 rounded-xl border border-gray-800" 
+            spotlightColor="rgba(111, 63, 143, 0.5)"
+          >
             {project.image && (
-              <div className="w-full aspect-video bg-gray-900 rounded-lg mb-4 overflow-hidden flex items-center justify-center p-2">
-                <img 
-                  src={`/images/${project.image}`} 
+              <div className="w-full aspect-[2/1] bg-gray-900 rounded-lg mb-4 overflow-hidden relative">
+                <Image
+                  src={`/images/${project.image}`}
                   alt={project.title}
-                  className="max-w-full max-h-full object-contain rounded-md"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                  priority={false}
                 />
               </div>
             )}
@@ -146,7 +178,7 @@ export default function Projects() {
                 </button>
               )}
             </div>
-          </div>
+          </SpotlightCard>
         ))}
       </div>
 
