@@ -1,10 +1,17 @@
 "use client";
 import { useState } from "react";
-import PDFViewer from "./PDFViewer";
+import PDFViewer from "../components/PDFViewer";
 import Image from "next/image";
 import SpotlightCard from '@/components/SpotlightCard';
 
 const projects = [
+  {
+    title: "Bimbel Wangsit",
+    description: "Web-based tryout platform for exam preparation, featuring online test simulations, question management, and performance tracking.",
+    role: ["Project Manager", "System Analyst"],
+    image: "Bimbel-Wangsit.png",
+    link: "https://bimbelwangsit.com/"
+  },
   {
     title: "Portofolio",
     description: "A collection of my academic and personal projects",

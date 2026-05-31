@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import PDFViewer from "./PDFViewer";
+import PDFViewer from "../components/PDFViewer";
 import Aurora from "@/components/Aurora";
 
 
